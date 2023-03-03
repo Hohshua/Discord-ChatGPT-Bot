@@ -55,9 +55,19 @@ client.on(Events.MessageCreate, async (message) => {
         prompt,
         model: "text-davinci-003",
         max_tokens: 500,
-        stop: ["\n"]
+        // stop: ["\n"]
     })
 
-    console.log("response", response.data.choices[0].text)
-    await message.channel.send(response.data.choices[0].text)
+    // console.log("response", response.data.choices[0].text)
+    
+    let choices = response.data.choices
+    console.log("response")
+    for (let j = 0; j < choices.length; j++) {
+        console.log(choices[j].text)
+        await message.channel.send(choices[j].text)
+        console.log(response.data)
+    }
+
+
+    // await message.channel.send(response.data.choices[0].text)
 })
