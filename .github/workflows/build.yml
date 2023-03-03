@@ -9,3 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm i discord.js dotenv openai
       - run: node index.js
+        env:
+          CI: true
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
