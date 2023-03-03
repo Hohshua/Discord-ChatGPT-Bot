@@ -7,5 +7,5 @@ jobs:
       - run: node --version
       - run: npm --version
       - uses: actions/checkout@v3
-      - run: npm install
+      - run: npm i discord.js dotenv openai
       - run: node index.js
