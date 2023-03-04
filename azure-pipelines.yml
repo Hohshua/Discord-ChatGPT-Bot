@@ -18,8 +18,8 @@ steps:
 - script: |
     npm i discord.js dotenv openai
     node index.js
-  displayName: 'npm install and build'
+  displayName: 'npm install and run'
   env:
-    CI: true
+    # CI: true
     OPENAI_KEY: $(OPENAI_KEY)
     BOT_TOKEN: $(BOT_TOKEN)
