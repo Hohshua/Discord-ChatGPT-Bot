@@ -20,6 +20,6 @@ steps:
     node index.js
   displayName: 'npm install and run'
   env:
-    # CI: true
+    CI: true
     OPENAI_KEY: $(OPENAI_KEY)
     BOT_TOKEN: $(BOT_TOKEN)
