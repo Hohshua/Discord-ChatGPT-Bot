@@ -51,23 +51,21 @@ client.on(Events.MessageCreate, async (message) => {
     prompt += `${client.user.username}:`
     console.log("prompt:", prompt)
 
-    const response = await openai.createCompletion({
-        prompt,
-        model: "text-davinci-003",
-        max_tokens: 500,
-        // stop: ["\n"]
-    })
-
+    // text-davinci-003
+    // const response = await openai.createCompletion({
+    //     prompt,
+    //     model: "text-davinci-003",
+    //     max_tokens: 500,
+    // })
     // console.log("response", response.data.choices[0].text)
-    
-    let choices = response.data.choices
-    console.log("response")
-    for (let j = 0; j < choices.length; j++) {
-        console.log(choices[j].text)
-        await message.channel.send(choices[j].text)
-        console.log(response.data)
-    }
-
-
     // await message.channel.send(response.data.choices[0].text)
+
+
+    //gpt-3.5-turbo
+    const response = await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{role: "user", content: prompt}]
+    })
+    console.log("response", response.data.choices[0].message.content)
+    await message.channel.send(response.data.choices[0].message.content)
 })
