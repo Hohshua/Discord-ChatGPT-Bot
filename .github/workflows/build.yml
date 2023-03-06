@@ -31,10 +31,10 @@ jobs:
       - name: Run bot
         id: run-bot
         run: node index.js
-          env:
-            CI: true
-            OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-            BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        env:
+          CI: true
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       
       - name: Rerun
         if: failure() && steps.run-bot.outcome != 'success'
