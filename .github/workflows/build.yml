@@ -8,10 +8,14 @@ jobs:
       - run: npm --version
       - uses: actions/checkout@v3
   install-packages:
+    runs-on: ubuntu-latest
+    container: node:16
     steps:
       - run: npm i discord.js dotenv openai
   run-bot:
     steps:
+    runs-on: ubuntu-latest
+    container: node:16
       - run: node index.js
         env:
           CI: true
