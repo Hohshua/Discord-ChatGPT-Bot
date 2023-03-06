@@ -13,9 +13,9 @@ jobs:
     steps:
       - run: npm i discord.js dotenv openai
   run-bot:
-    steps:
     runs-on: ubuntu-latest
-    container: node:16
+    container: node:16  
+    steps:
       - run: node index.js
         env:
           CI: true
