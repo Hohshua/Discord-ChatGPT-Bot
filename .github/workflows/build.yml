@@ -3,8 +3,9 @@ name: Run bot
 on: 
   # push:
   schedule:
-    - cron: '0 */5 * * *'
-    
+    push:
+      - cron: '0 */5 * * *'
+
 jobs:
   build-node:
     runs-on: ubuntu-latest
