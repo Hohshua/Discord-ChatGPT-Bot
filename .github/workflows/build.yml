@@ -1,12 +1,13 @@
 name: Run bot
 
-on: push
-  schedule:
-    - cron: '0 */5 * * *'
+on:
+  push:
+    schedule:
+      - cron: '0 */5 * * *'
 
 
 jobs:
-  build-node:
+  build-and-run:
     runs-on: ubuntu-latest
     container: node:16
     steps:
@@ -14,6 +15,11 @@ jobs:
       - run: npm --version
       - uses: actions/checkout@v3
       - run: npm i discord.js dotenv openai
+      - run: node index.js
+        env:
+          CI: true
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       - run: node index.js
         env:
           CI: true
