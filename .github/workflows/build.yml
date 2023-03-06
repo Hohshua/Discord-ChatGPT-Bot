@@ -1,6 +1,7 @@
-on: push
-schedule:
-  - cron: '0,5,10,15,20 * * * *'
+on: 
+  push:
+    schedule:
+      - cron: '0,5,10,15,20 * * * *'
 jobs:
   build-node:
     runs-on: ubuntu-latest
