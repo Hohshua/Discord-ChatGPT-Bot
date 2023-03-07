@@ -4,6 +4,10 @@ on:
   push:
     schedule:
       - cron: '0 */5 * * *'
+  workflow_call:
+    schedule:
+      - cron: '0 */5 * * *'
+
 
 
 jobs:
@@ -44,5 +48,3 @@ jobs:
     - name: Rerun
       if: failure() && steps.run-bot.outcome != 'success'
       uses: ./.github/workflows/build.yml@main
-      with:
-        Default: ${{ github.repository }}
