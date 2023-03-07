@@ -47,5 +47,5 @@ jobs:
     #   secrets: inherit
   rerun:
     steps:
-      uses: ./.github/workflows/build.yml@main
-      secrets: inherit
+      - uses: ./.github/workflows/build.yml@main
+        secrets: inherit
