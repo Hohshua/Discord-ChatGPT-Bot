@@ -43,4 +43,4 @@ jobs:
     
     - name: Rerun
       if: failure() && steps.run-bot.outcome != 'success'
-      uses: Hohshua/Discord-ChatGPT-Bot/blob/main/.github/workflows/build.yml@main
+      uses: ./.github/workflows/build.yml@main
