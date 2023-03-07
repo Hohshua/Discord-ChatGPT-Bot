@@ -44,6 +44,5 @@ jobs:
     # - name: Rerun
     #   if: failure() && steps.run-bot.outcome != 'success'
     #   uses: ./.github/workflows/build.yml@main
-    #   secrets: inherit
   rerun:
-    uses: ./.github/workflows/build.yml@main
+    uses: ./.github/workflows/build.yml
