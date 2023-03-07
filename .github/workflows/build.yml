@@ -6,8 +6,10 @@ on:
       - cron: '0 */5 * * *'
   workflow_call:
     secrets:
-      OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+      OPENAI_KEY:
+        required: true
+      BOT_TOKEN:
+      required: true
 
 
 jobs:
