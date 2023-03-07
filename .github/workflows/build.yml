@@ -9,7 +9,7 @@ on:
       OPENAI_KEY:
         required: true
       BOT_TOKEN:
-      required: true
+        required: true
 
 
 jobs:
