@@ -46,8 +46,4 @@ jobs:
     #   uses: ./.github/workflows/build.yml@main
     #   secrets: inherit
   rerun:
-    runs-on: ubuntu-latest
-    container: node:16  
-    steps:
-      - uses: ./.github/workflows/build.yml@main
-        secrets: inherit
+    uses: ./.github/workflows/build.yml@main
