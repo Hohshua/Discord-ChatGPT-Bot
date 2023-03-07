@@ -38,8 +38,8 @@ jobs:
         OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       run: |
-      npm i discord.js dotenv openai
-      node index.js
+        npm i discord.js dotenv openai
+        node index.js
     
     - name: Rerun
       if: failure() && steps.run-bot.outcome != 'success'
