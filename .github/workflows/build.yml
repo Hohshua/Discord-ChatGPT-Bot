@@ -41,7 +41,10 @@ jobs:
         npm i discord.js dotenv openai
         node index.js
     
-    - name: Rerun
-      if: failure() && steps.run-bot.outcome != 'success'
-      uses: ./.github/workflows/build.yml@main
-      secrets: inherit
+    # - name: Rerun
+    #   if: failure() && steps.run-bot.outcome != 'success'
+    #   uses: ./.github/workflows/build.yml@main
+    #   secrets: inherit
+  rerun:
+    uses: ./.github/workflows/build.yml@main
+    secrets: inherit
