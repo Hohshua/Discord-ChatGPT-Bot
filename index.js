@@ -38,11 +38,11 @@ client.on(Events.MessageCreate, async (message) => {
     messages = messages.map(m=>m[1])
     messages.unshift(message)
 
-    let users = [...new Set([...messages.map(m=> m.member.displayName), client.user.username])]
+    // let users = [...new Set([...messages.map(m=> m.member.displayName), client.user.username])]
 
-    let lastUser = users.pop()
+    // let lastUser = users.pop()
 
-    let prompt = `The following is a conversation between ${users.join(", ")}, and ${lastUser}. \n\n`
+    // let prompt = `The following is a conversation between ${users.join(", ")}, and ${lastUser}. \n\n`
 
     for (let i = messages.length - 1; i >= 0; i--) {
         const m = messages[i]
