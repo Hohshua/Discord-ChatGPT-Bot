@@ -43,7 +43,7 @@ client.on(Events.MessageCreate, async (message) => {
     // let lastUser = users.pop()
 
     // let prompt = `The following is a conversation between ${users.join(", ")}, and ${lastUser}. \n\n`
-
+    let prompt
     for (let i = messages.length - 1; i >= 0; i--) {
         const m = messages[i]
         prompt += `${m.member.displayName}: ${m.content}\n`
